@@ -44,6 +44,7 @@ html {
   display: flex;
   background-color: #911f27;
   position: sticky;
+  z-index: 1;
   top: 0;
   flex-direction: column;
 }
@@ -409,6 +410,8 @@ i {
   justify-content: center;
   align-items: center;
   padding-top: 35px;
+
+  filter: grayscale(100%)
 }
 
 .textoVideos button {
@@ -517,11 +520,11 @@ i {
 
 .sectionHistoria h2 {
   display: flex;
-  background-color: #000000a8;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.788) 0%, rgba(255,255,255,0) 100%);
   color: #ffffff;
   justify-content: center;
-  width: 500px;
-  padding: 1rem;
+  width: 720px;
+  padding: 2rem;
   font-size: 3.6rem;
   margin-top: 1rem;
   grid-area: tituloHistoria;
@@ -530,7 +533,7 @@ i {
 .historia {
   display: flex;
   flex-direction: column;
-  background-color: #000000a8;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
   text-align: justify;
   width: 720px;
   padding: 0 2rem 2rem 2rem;
@@ -573,6 +576,44 @@ i {
   justify-content: space-around;
   grid-area: nombreBanda;
 }
+
+/*! Animaciones */
+
+/*? Animaciones a botones discografía*/
+
+.animacion{
+  transition: all 0.2s ease-in-out;
+}
+.animacion:hover{
+  transform: scale(1.2);
+}
+
+.anifoto{
+  filter: grayscale(100%)
+}
+
+.anifoto:hover{
+  animation: gris 3s ease-in-out infinite;
+}
+
+@keyframes gris{
+  0%{
+    filter: grayscale(0%);
+  }
+  25%{
+    filter: grayscale(50%);
+  }
+  50%{
+    filter: grayscale(100%);
+  }
+  75%{
+    filter: grayscale(50%)
+  }
+  100%{
+    filter: grayscale(0%);
+  }
+}
+
 
 /*TODO  media queires - TABLET 768px */
 
@@ -648,6 +689,9 @@ i {
 
   /*? Nosotros */
 
+  .sectionHistoria h2{
+    width: 580px;
+  }
   .historia {
     width: 580px;
   }
