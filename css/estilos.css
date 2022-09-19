@@ -17,19 +17,18 @@ Beige Oscuro = #FACE7F
 /* Colores y texto general */
 a {
   color: #000000;
-}
-
-a:hover {
-  color: #ca2f2f;
+  text-decoration: none;
 }
 
 body {
-  background-color: #630a10;
+  background-image: url(../image/background-op-2.jpg);
+ /*  background-color: #630a10; */
   font-family: "Lato", sans-serif;
 }
 
 p {
   color: #ffffff;
+  margin-bottom: 0;
 }
 /* REM */
 html {
@@ -40,32 +39,39 @@ html {
 
 /*? HEADER - Index*/
 
-.header {
-  display: flex;
-  background-color: #911f27;
-  position: sticky;
-  z-index: 1;
-  top: 0;
-  flex-direction: column;
+.navbar img{
+  max-width: 100%;
 }
 
-.tituloImaginedragons {
-  text-align: center;
-  padding: 1rem;
-}
-
-.menuPrincipal {
+.bg-beige{
   background-color: #face7f;
+  width: 100%;
   text-align: center;
 }
 
-.menuPrincipal ul li {
-  list-style: none;
-  font-weight: 700;
-  display: inline-block;
-  font-size: 13px;
-  margin-right: 16px;
-  padding: 9px;
+.bg-bordo{
+  background-image: url(../image/background-op-2.jpg);
+  /* background-color: #911f27; */
+}
+
+.nav-link{
+  color: #000000;
+}
+
+.nav-link:hover{
+  color: #ca2f2f;
+}
+
+.navbar{
+  padding: 0;
+}
+
+.navbar-nav{
+  align-items: center;
+  justify-content: center;
+}
+.container-fluid{
+  --bs-gutter-x: 0;
 }
 
 /*? MAIN - Index */
@@ -75,6 +81,7 @@ html {
   grid-template-columns: 1fr;
   grid-template-areas:
     "imagenCarrusel"
+    "tourpreview"
     "sectionAlbums"
     "merch";
 
@@ -82,60 +89,67 @@ html {
   grid-area: main;
 }
 
-.imagenCarrusel img {
-  width: 100%;
-  grid-area: imagenCarrusel;
+.sectionTour-i{
+  background-image: url(../image/background-op-5.jpg);
+  background-repeat: no-repeat;
+  grid-area: tourpreview;
 }
 
-/* SECTION 1 - Index */
-
-.sectionAlbums {
-  grid-area: sectionAlbums;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  grid-template-areas:
-    "cajaAlbum1"
-    "cajaAlbum2";
+.card{
+  background-color: #414141;
+  margin-bottom: 3rem;
 }
 
-.album1 {
+.card-body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.album2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.albumTexto {
-  text-align: center;
-  font-size: 50px;
-  padding: 80px;
-  margin: 2px;
-}
-
-.cajaAlbum1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  margin: 12px;
-  grid-area: cajaAlbum1;
 }
-.cajaAlbum2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  grid-area: cajaAlbum2;
+
+.row{
+  margin: 0;
 }
+
+.btn-primary{
+  background-color: #ca2f2f;
+  border: none;
+  --bs-btn-hover-bg: #911f27;
+}
+
+
 
 /* SECTION 2 - Index */
+
+.sectionAlbums{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  grid-area: sectionAlbums;
+}
+
+.card{
+  border: none;
+}
+
+.card-text{
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.btn-outline-light{
+  background-color: #d3d1d1;
+  color: #000000;
+  border: none;
+}
+.textoBoton:hover{
+  color: #ca2f2f;
+}
+
+
+
+/* SECTION 3 - Index */
 
 .merchIndex {
   display: grid;
@@ -157,8 +171,17 @@ html {
 .cajaMerch1 {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
   grid-area: cajaMerch1;
 }
+
+.cajaMerch1 img{
+  border-radius: 1rem;
+  border: solid 5px #ffffff;
+  margin: 1.5rem;
+}
+
+
 
 /*? FORMULARIO - Index */
 
@@ -169,7 +192,9 @@ html {
 }
 
 fieldset {
-  background-color: #630a10;
+  background-image: url(../image/background-op-5.jpg);
+  background-repeat: no-repeat;
+/*   background-color: #630a10; */
   border: none;
   padding: 1rem;
 }
@@ -320,7 +345,8 @@ i {
 
 /* Section 1 */
 .colorDiscografia {
-  background-color: #141414;
+  background-image: url(../image/background-op-5.jpg);
+  /* background-color: #141414; */
 }
 .sectionDisco {
   display: grid;
@@ -360,6 +386,26 @@ i {
 
 .discoTexto button:hover {
   background-color: #fcf0c8;
+}
+
+/* Section cartas albums */
+
+.card-img, .card-img-top{
+  padding: 1rem;
+}
+
+.card{
+  background-color: #0000009f;
+  border-radius: 6px;
+}
+
+.card-img, .card-img-top {
+  padding: 1rem;
+  border-radius: 25px;
+}
+
+.card, .colorParrafo p{
+  color: #ffffff;
 }
 
 /* Section 2 */
@@ -496,6 +542,31 @@ i {
   font-size: 4.1rem;
   grid-area: tituloMerch;
 }
+/* Section preguntas */
+
+.acordeon{
+  margin-bottom: 1rem;
+}
+.acordeon h2{
+  color: #ffffff;
+}
+
+.accordion{
+  --bs-accordion-bg: #0000009f;
+}
+.accordion-button{
+  color: #ffffff;
+}
+
+.accordion-body{
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed){
+  color: #ffffff;
+  background-color: #0000009f;
+}
+
 
 /*! PÁGINA CONTACTO */
 
